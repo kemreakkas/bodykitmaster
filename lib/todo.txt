@@ -1,0 +1,94 @@
+// TO DO: 
+// ++Takvim üzerinden istenen tarihe gidebilme
+// ++Boş not eklememe
+// seçilen tarihe gidildiğinde notlar siliniyor
+// notlar ekranına firma ve durum içeren butonlar ekle-- firma seçilir. Butonlardan (ulaşılamadı/satıldı/satılamadı)
+https://www.akinsoft.com.tr/programlar/detay/wolvox-erp-programi-erp-mrp-on-muhasebe--woo8
+//toplu sms gönderme
+//kullanıcının görev bölgesi haricinde başka bir yere gitmesi üzerine admine bildirim atılması
+
+
+
+Depo Listesi 
+    ID
+    stok numarası
+    ürün adı
+    ürün açıklaması
+    depo 
+    stok adedi
+    alış fiyatı
+    satış fiyatı
+
+final String id;
+  final String stockNumber;
+  final String productName;
+  final String warehouse;
+  final String companyDescription;
+  final String stock;
+  final String purchasePrice;
+  final String salePrice;
+------------------------------------
+Firma Listesi
+    Firma id
+    Firma adı
+    Firma telefonu
+    Firma sahibi
+    Firma Sorumlusu
+    Firma Sorumlusu telefonu
+    Firma Adresi
+    Firma Açıklaması
+
+class User {
+  final String id;
+  final String companyName;
+  final String companyPhone;
+  final String companyOwner;
+  final String companyContact;
+  final String companyContactPhone;
+  final String location;
+  final String companyDescription;
+  -----------------------------
+Ürün satış
+    ID
+    stok numarası
+    ürün adı
+    Ürün açıklaması
+    depo adı 
+    stok adedi
+    alış fiyatı
+    satış fiyatı
+
+final String id;
+  final String productNumber;
+  final String productName;
+  final String warehouseName;
+  final String productDescription;
+  final String productStock;
+  final String purchasePrice;
+  final String salePrice;
+  -----------------------------
+Sepete Git
+    ID
+    stok numarası
+    ürün adı
+    ürün açıklaması
+    depo adı 
+    stok adedi
+    satılan stok adedi
+    satış fiyatı
+    
+final String id;
+  final String productNumber;
+  final String productName;
+  final String companyDescription;
+  final String warehouseName;
+  final String productStock;
+  final String salePrice;
+  final String purchaseKDV;
+  final String purchaseKDVPerakende;
+  final String purchaseKDVToptan;
+  final String OTV 
+
+
+
+
