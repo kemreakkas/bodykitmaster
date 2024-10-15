@@ -3,6 +3,7 @@
 import 'package:bodykitmaster/Calendar/events_example.dart';
 import 'package:bodykitmaster/Company/CompanyList.dart';
 import 'package:bodykitmaster/Constants.dart';
+import 'package:bodykitmaster/Customer/CustomerList.dart';
 import 'package:bodykitmaster/Homesidebar.dart';
 import 'package:bodykitmaster/Pages/MySales.dart';
 import 'package:bodykitmaster/Pages/SellProduct.dart';
@@ -200,9 +201,10 @@ class _ScreensState extends State<_Screens> {
           case 2:
             return const SellProduct();
           case 3:
-            return CompanyList();
+            return CustomerList();
           case 4:
-            
+             return CompanyList();
+             case 5:
             return MySales();
           case 6:
             return SettingsPage(

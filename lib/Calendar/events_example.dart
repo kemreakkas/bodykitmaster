@@ -107,7 +107,8 @@ class _TableEventsExampleState extends State<TableEventsExample> {
 
       // Save the event to the server (Vercel)
       try {
-        final response = await http.post(
+        final response = 
+        await http.post(
           Uri.parse('https://depo-server-main.vercel.app/api/events'),
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode({

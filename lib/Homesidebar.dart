@@ -81,7 +81,7 @@ class HomeSidebarX extends StatelessWidget {
           icon: Icons.warehouse,
           label: 'Stok Bilgileri',
         ),
-        const SidebarXItem(
+        SidebarXItem(
           icon: Icons.sell,
           label: 'Müşteriler',
         ),

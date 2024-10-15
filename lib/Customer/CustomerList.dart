@@ -41,7 +41,7 @@ class User {
 
 Future<List<User>> fetchUsers() async {
   final response =
-      await http.get(Uri.parse('https://depo-server.vercel.app/api/customer'));
+      await http.get(Uri.parse('https://depo-server-main.vercel.app/api/customer'));
 
   if (response.statusCode == 200) {
     List jsonResponse = json.decode(response.body);
