@@ -48,7 +48,7 @@ Future<User> createUser(
     String customerContactPhone,
     String customerDescription) async {
   final response = await http.post(
-    Uri.parse('https://depo-server.vercel.app/api/customer'),
+    Uri.parse('https://depo-server-main.vercel.app/api/customer'),
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
     },

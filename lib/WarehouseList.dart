@@ -81,7 +81,7 @@ class _WarehouseListState extends State<WarehouseList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Depo Listesi'),
+        title: const Text('Stok Bilgileri'),
         backgroundColor: canvasColor,
         foregroundColor: white,
       ),

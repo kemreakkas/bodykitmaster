@@ -104,7 +104,7 @@ class _CustomerListState extends State<CustomerList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Firma Listesi'),
+        title: const Text('Müşteri Listesi'),
         actions: [
           ElevatedButton(
             onPressed: () {
@@ -113,7 +113,7 @@ class _CustomerListState extends State<CustomerList> {
                 MaterialPageRoute(builder: (context) => CustomerCreate()),
               );
             },
-            child: const Text('FİRMA EKLE'),
+            child: const Text('Müşteri EKLE'),
           ),
         ],
       ),
@@ -176,29 +176,29 @@ class _CustomerListState extends State<CustomerList> {
                       columns: const <DataColumn>[
                         DataColumn(
                           label: Text(
-                            'FİRMA ADI',
+                            'Müşteri ADI',
                             style: TextStyle(),
                           ),
                         ),
                         DataColumn(
                           label: Text(
-                            'FİRMA TELEFON',
+                            'Müşteri TELEFON',
                             style: TextStyle(),
                           ),
                         ),
                         DataColumn(
                           label: Text(
-                            'FİRMA SAHİBİ',
+                            'Müşteri SAHİBİ',
                             style: TextStyle(),
                           ),
                         ), DataColumn(
                           label: Text(
-                            'FİRMA iletişim kişisi',
+                            'Müşteri iletişim kişisi',
                             style: TextStyle(),
                           ),
                         ), DataColumn(
                           label: Text(
-                            'FİRMA iletişim kişi telefon',
+                            'Müşteri iletişim kişi telefon',
                             style: TextStyle(),
                           ),
                         ),
@@ -209,7 +209,7 @@ class _CustomerListState extends State<CustomerList> {
                           ),
                         ), DataColumn(
                           label: Text(
-                            'FİRMA Açıklama',
+                            'Müşteri Açıklama',
                             style: TextStyle(),
                           ),
                         ),

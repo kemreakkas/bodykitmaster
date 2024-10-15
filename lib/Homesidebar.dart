@@ -83,6 +83,10 @@ class HomeSidebarX extends StatelessWidget {
         ),
         SidebarXItem(
           icon: Icons.sell,
+          label: 'Satış',
+        ),
+        SidebarXItem(
+          icon: Icons.sell,
           label: 'Müşteriler',
         ),
         SidebarXItem(
@@ -92,7 +96,7 @@ class HomeSidebarX extends StatelessWidget {
         ),
         SidebarXItem(
           icon: Icons.attach_money,
-          label: 'Satışlar',
+          label: 'Satışlarım',
           //    onTap: () => _showDisabledAlert(context),
         ),
         SidebarXItem(

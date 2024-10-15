@@ -271,14 +271,14 @@ class _ScreensState extends State<_Screens> {
           ),
         );
       },
-      items: const [
+      items: const [/*
         SidebarXItem(icon: Icons.home, label: 'Ana Sayfa'),
         SidebarXItem(icon: Icons.warehouse, label: 'Depo Bilgileri'),
         SidebarXItem(icon: Icons.sell, label: 'Ürün Satış'),
         SidebarXItem(icon: Icons.business_center, label: 'Firmalar'),
         SidebarXItem(icon: Icons.attach_money, label: 'Satışlar'),
         SidebarXItem(icon: Icons.settings, label: 'Ayarlar'),
-      ],
+      */],
     );
   }
 
