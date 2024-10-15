@@ -1,11 +1,12 @@
-// ignore_for_file: file_names, prefer_const_constructors_in_immutables
+// ignore_for_file: file_names, prefer_const_constructors_in_immutables, unused_import, unused_element
 
-import 'package:bodykitmaster/CompanyList.dart';
+import 'package:bodykitmaster/Calendar/events_example.dart';
+import 'package:bodykitmaster/Company/CompanyList.dart';
 import 'package:bodykitmaster/Constants.dart';
 import 'package:bodykitmaster/Homesidebar.dart';
-import 'package:bodykitmaster/MySales.dart';
-import 'package:bodykitmaster/SellProduct.dart';
-import 'package:bodykitmaster/SettingsPage.dart';
+import 'package:bodykitmaster/Pages/MySales.dart';
+import 'package:bodykitmaster/Pages/SellProduct.dart';
+import 'package:bodykitmaster/Pages/SettingsPage.dart';
 import 'package:bodykitmaster/WarehouseList.dart';
 import 'package:bodykitmaster/notes.dart';
 import 'package:flutter/material.dart';
@@ -144,7 +145,7 @@ class _ScreensState extends State<_Screens> {
       ),
       initialDate: focusedDay,
       firstDate: DateTime(2015, 1, 1),
-      lastDate: DateTime(2030, 3, 14),
+      lastDate: DateTime(2050, 3, 14),
     );
     if (picked != null && picked != focusedDay) {
       setState(() {
@@ -169,22 +170,28 @@ class _ScreensState extends State<_Screens> {
                     child: GridView.count(
                       crossAxisCount: 2,
                       children: [
-                        _buildCalendar(),
-                        NotesSection(
+                     //   _buildCalendar(),
+                        /*NotesSection(
                           notes: notes[selectedDay] ?? [],
                           onNotesChanged: (updatedNotes) {
                             setState(() {
                               notes[selectedDay] = updatedNotes;
                             });
                           },
-                        ),
+                        ),*/
                       ],
                     ),
                   ),
                 ],
               ),
               floatingActionButton: FloatingActionButton(
-                onPressed: () => _selectDate(context),
+                onPressed: () {
+                  Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => TableEventsExample()),
+              ); 
+                 //_selectDate(context);
+                },
                 child: const Icon(Icons.calendar_today),
               ),
             );
@@ -288,7 +295,7 @@ class _ScreensState extends State<_Screens> {
                 headerStyle: const HeaderStyle(formatButtonVisible: false),
                 locale: 'tr_TR',
                 firstDay: DateTime.utc(2015, 1, 1),
-                lastDay: DateTime.utc(2030, 3, 14),
+                lastDay: DateTime.utc(2050, 3, 14),
                 focusedDay: focusedDay,
                 selectedDayPredicate: (day) => isSameDay(day, selectedDay),
                 onDaySelected: (selectedDay, focusedDay) {
@@ -302,3 +309,6 @@ class _ScreensState extends State<_Screens> {
     );
   }
 }
+
+
+ 

@@ -1,4 +1,4 @@
-import 'package:bodykitmaster/HomePage.dart';
+import 'package:bodykitmaster/Pages/HomePage.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bodykitmaster/Constants.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
 
-    return const MaterialApp(
+    return MaterialApp(
       /*  theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreenAccent),
         useMaterial3: true,

@@ -1,62 +1,62 @@
 // ignore_for_file: file_names, use_key_in_widget_constructors, library_private_types_in_public_api
 
-import 'package:bodykitmaster/CompanyCreate.dart';
+import 'package:bodykitmaster/Customer/CustomerCreate.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class User {
   final String id;
-  final String companyName;
-  final String companyPhone;
-  final String companyOwner;
-  final String companyContact;
-  final String companyContactPhone;
+  final String customerName;
+  final String customerPhone;
+  final String customerOwner;
+  final String customerContact;
+  final String customerContactPhone;
   final String location;
-  final String companyDescription;
+  final String customerDescription;
 
   User(
       {required this.id,
-      required this.companyName,
-      required this.companyPhone,
-      required this.companyOwner,
-      required this.companyContact,
-      required this.companyContactPhone,
+      required this.customerName,
+      required this.customerPhone,
+      required this.customerOwner,
+      required this.customerContact,
+      required this.customerContactPhone,
       required this.location,
-      required this.companyDescription});
+      required this.customerDescription});
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       id: json['_id'],
-      companyName: json['companyName'],
-      companyPhone: json['companyPhone'],
-      companyOwner: json['companyOwner'],
-      companyContact: json['companyContact'],
-      companyContactPhone: json['companyContactPhone'],
+      customerName: json['customerName'],
+      customerPhone: json['customerPhone'],
+      customerOwner: json['customerOwner'],
+      customerContact: json['customerContact'],
+      customerContactPhone: json['customerContactPhone'],
       location: json['location'],
-      companyDescription: json['companyDescription'],
+      customerDescription: json['customerDescription'],
     );
   }
 }
 
 Future<List<User>> fetchUsers() async {
   final response =
-      await http.get(Uri.parse('https://depo-server.vercel.app/api/company'));
+      await http.get(Uri.parse('https://depo-server.vercel.app/api/customer'));
 
   if (response.statusCode == 200) {
     List jsonResponse = json.decode(response.body);
     return jsonResponse.map((user) => User.fromJson(user)).toList();
   } else {
-    throw Exception('Failed to load company');
+    throw Exception('Failed to load customer');
   }
 }
 
-class CompanyList extends StatefulWidget {
+class CustomerList extends StatefulWidget {
   @override
-  _CompanyListState createState() => _CompanyListState();
+  _CustomerListState createState() => _CustomerListState();
 }
 
-class _CompanyListState extends State<CompanyList> {
+class _CustomerListState extends State<CustomerList> {
   late Future<List<User>> futureUsers;
   List<User> filteredUsers = [];
   String searchQuery = '';
@@ -84,13 +84,13 @@ class _CompanyListState extends State<CompanyList> {
         setState(() {
           if (searchType == 'name') {
             filteredUsers = users
-                .where((user) => user.companyName
+                .where((user) => user.customerName
                     .toLowerCase()
                     .contains(query.toLowerCase()))
                 .toList();
           } else if (searchType == 'owner') {
             filteredUsers = users
-                .where((user) => user.companyOwner
+                .where((user) => user.customerOwner
                     .toLowerCase()
                     .contains(query.toLowerCase()))
                 .toList();
@@ -110,7 +110,7 @@ class _CompanyListState extends State<CompanyList> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => CompanyCreate()),
+                MaterialPageRoute(builder: (context) => CustomerCreate()),
               );
             },
             child: const Text('FİRMA EKLE'),
@@ -217,13 +217,13 @@ class _CompanyListState extends State<CompanyList> {
                       rows: filteredUsers.map((user) {
                         return DataRow(
                           cells: <DataCell>[
-                            DataCell(Text(user.companyName)),
-                            DataCell(Text(user.companyPhone)),
-                            DataCell(Text(user.companyOwner)),
-                            DataCell(Text(user.companyContact)),
-                            DataCell(Text(user.companyContactPhone)),
+                            DataCell(Text(user.customerName)),
+                            DataCell(Text(user.customerPhone)),
+                            DataCell(Text(user.customerOwner)),
+                            DataCell(Text(user.customerContact)),
+                            DataCell(Text(user.customerContactPhone)),
                             DataCell(Text(user.location)),
-                            DataCell(Text(user.companyDescription)),
+                            DataCell(Text(user.customerDescription)),
                           ],
                         );
                       }).toList(),

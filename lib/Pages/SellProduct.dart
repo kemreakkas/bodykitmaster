@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:bodykitmaster/Constants.dart';
-import 'package:bodykitmaster/OrderPage.dart';
+import 'package:bodykitmaster/Pages/OrderPage.dart';
 import 'package:flutter/material.dart';
 
 class SellProduct extends StatefulWidget {

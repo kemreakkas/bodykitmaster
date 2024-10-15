@@ -89,6 +89,7 @@ final String id;
   final String purchaseKDVToptan;
   final String OTV 
 
-
+takvim üzerinden saat ayarı yapabilme
+randevu oluşturulmuş saatlerin renkli gösterimi
 
 

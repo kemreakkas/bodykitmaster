@@ -1,5 +1,4 @@
-
-// ignore_for_file: file_names
+// ignore_for_file: file_names, unused_element
 
 import 'package:bodykitmaster/Constants.dart';
 import 'package:flutter/material.dart';
@@ -70,43 +69,36 @@ class HomeSidebarX extends StatelessWidget {
       headerBuilder: (context, extended) {
         return const SizedBox(
           height: 100,
-          child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text('LOGO')
-          ),
+          child: Padding(padding: EdgeInsets.all(16.0), child: Text('LOGO')),
         );
       },
       items: [
         SidebarXItem(
           icon: Icons.home,
           label: 'Ana Sayfa',
-          onTap: () {
-            debugPrint('Home');
-          },
         ),
         const SidebarXItem(
           icon: Icons.warehouse,
-          label: 'Depo Bilgileri',
+          label: 'Stok Bilgileri',
         ),
         const SidebarXItem(
           icon: Icons.sell,
-          label: 'Ürün Satış',
+          label: 'Müşteriler',
         ),
         SidebarXItem(
           icon: Icons.business_center,
           label: 'Firmalar',
-           onTap: () => _showDisabledAlert(context),
+          //  onTap: () => _showDisabledAlert(context),
         ),
-        
         SidebarXItem(
           icon: Icons.attach_money,
           label: 'Satışlar',
-           onTap: () => _showDisabledAlert(context),
+          //    onTap: () => _showDisabledAlert(context),
         ),
         SidebarXItem(
           icon: Icons.settings,
           label: 'Ayarlar',
-           onTap: () => _showDisabledAlert(context),
+          //   onTap: () => _showDisabledAlert(context),
         ),
       ],
     );

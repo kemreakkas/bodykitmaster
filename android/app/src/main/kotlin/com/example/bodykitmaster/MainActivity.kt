@@ -1,4 +1,4 @@
-package com.example.bodykitmaster
+package com.kea.bodykitmaster
 
 import io.flutter.embedding.android.FlutterActivity
 

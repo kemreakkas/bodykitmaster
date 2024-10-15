@@ -1,65 +1,65 @@
 // ignore_for_file: file_names, library_private_types_in_public_api, prefer_interpolation_to_compose_strings, avoid_print, use_key_in_widget_constructors
 
-// company post işlemi
+// customer post işlemi
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class User {
   final String id;
-  final String companyName;
-  final String companyPhone;
-  final String companyOwner;
-  final String companyContact;
-  final String companyContactPhone;
+  final String customerName;
+  final String customerPhone;
+  final String customerOwner;
+  final String customerContact;
+  final String customerContactPhone;
   final String location;
-  final String companyDescription;
+  final String customerDescription;
 
   User(
       {required this.id,
-      required this.companyName,
-      required this.companyPhone,
-      required this.companyOwner,
-      required this.companyContact,
-      required this.companyContactPhone,
+      required this.customerName,
+      required this.customerPhone,
+      required this.customerOwner,
+      required this.customerContact,
+      required this.customerContactPhone,
       required this.location,
-      required this.companyDescription});
+      required this.customerDescription});
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       id: json['_id'],
-      companyName: json['companyName'],
-      companyPhone: json['companyPhone'],
-      companyOwner: json['companyOwner'],
-      companyContact: json['companyContact'],
-      companyContactPhone: json['companyContactPhone'],
+      customerName: json['customerName'],
+      customerPhone: json['customerPhone'],
+      customerOwner: json['customerOwner'],
+      customerContact: json['customerContact'],
+      customerContactPhone: json['customerContactPhone'],
       location: json['location'],
-      companyDescription: json['companyDescription'],
+      customerDescription: json['customerDescription'],
     );
   }
 }
 
 Future<User> createUser(
-    String companyName,
-    String companyPhone,
-    String companyOwner,
+    String customerName,
+    String customerPhone,
+    String customerOwner,
     String location,
-    String companyContact,
-    String companyContactPhone,
-    String companyDescription) async {
+    String customerContact,
+    String customerContactPhone,
+    String customerDescription) async {
   final response = await http.post(
-    Uri.parse('https://depo-server.vercel.app/api/company'),
+    Uri.parse('https://depo-server.vercel.app/api/customer'),
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
     },
     body: jsonEncode({
-      'companyName': companyName,
-      'companyPhone': companyPhone,
-      'companyOwner': companyOwner,
-      'companyContact': companyContact,
-      'companyContactPhone': companyContactPhone,
+      'customerName': customerName,
+      'customerPhone': customerPhone,
+      'customerOwner': customerOwner,
+      'customerContact': customerContact,
+      'customerContactPhone': customerContactPhone,
       'location': location,
-      'companyDescription': companyDescription,
+      'customerDescription': customerDescription,
     }),
   );
 
@@ -73,22 +73,22 @@ Future<User> createUser(
   }
 }
 
-class CompanyCreate extends StatefulWidget {
+class CustomerCreate extends StatefulWidget {
   @override
-  _CompanyCreateState createState() => _CompanyCreateState();
+  _CustomerCreateState createState() => _CustomerCreateState();
 }
 
-class _CompanyCreateState extends State<CompanyCreate> {
+class _CustomerCreateState extends State<CustomerCreate> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _companyNameController = TextEditingController();
-  final TextEditingController _companyPhoneController = TextEditingController();
-  final TextEditingController _companyOwnerController = TextEditingController();
-  final TextEditingController _companyContactController =
+  final TextEditingController _customerNameController = TextEditingController();
+  final TextEditingController _customerPhoneController = TextEditingController();
+  final TextEditingController _customerOwnerController = TextEditingController();
+  final TextEditingController _customerContactController =
       TextEditingController();
-  final TextEditingController _companyContactPhoneController =
+  final TextEditingController _customerContactPhoneController =
       TextEditingController();
   final TextEditingController _locationController = TextEditingController();
-  final TextEditingController _companyDescriptionController =
+  final TextEditingController _customerDescriptionController =
       TextEditingController();
   Future<User>? _futureUser;
 
@@ -112,7 +112,7 @@ class _CompanyCreateState extends State<CompanyCreate> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextFormField(
-            controller: _companyNameController,
+            controller: _customerNameController,
             decoration: const InputDecoration(labelText: 'Firma Adı'),
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -122,7 +122,7 @@ class _CompanyCreateState extends State<CompanyCreate> {
             },
           ),
           TextFormField(
-            controller: _companyPhoneController,
+            controller: _customerPhoneController,
             decoration: const InputDecoration(labelText: 'Firma Numarası'),
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -132,7 +132,7 @@ class _CompanyCreateState extends State<CompanyCreate> {
             },
           ),
           TextFormField(
-            controller: _companyOwnerController,
+            controller: _customerOwnerController,
             decoration: const InputDecoration(labelText: 'Firma sahibi'),
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -142,7 +142,7 @@ class _CompanyCreateState extends State<CompanyCreate> {
             },
           ),
           TextFormField(
-            controller: _companyContactController,
+            controller: _customerContactController,
             decoration:
                 const InputDecoration(labelText: 'Firma iletişim Kişisi'),
             validator: (value) {
@@ -153,7 +153,7 @@ class _CompanyCreateState extends State<CompanyCreate> {
             },
           ),
           TextFormField(
-            controller: _companyContactPhoneController,
+            controller: _customerContactPhoneController,
             decoration:
                 const InputDecoration(labelText: 'Firma iletişim numarası'),
             validator: (value) {
@@ -174,7 +174,7 @@ class _CompanyCreateState extends State<CompanyCreate> {
             },
           ),
           TextFormField(
-            controller: _companyDescriptionController,
+            controller: _customerDescriptionController,
             decoration: const InputDecoration(labelText: 'Firma açıklama'),
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -190,13 +190,13 @@ class _CompanyCreateState extends State<CompanyCreate> {
                 if (_formKey.currentState!.validate()) {
                   setState(() {
                     _futureUser = createUser(
-                      _companyNameController.text,
-                      _companyPhoneController.text,
-                      _companyOwnerController.text,
-                      _companyContactController.text,
-                      _companyContactPhoneController.text,
+                      _customerNameController.text,
+                      _customerPhoneController.text,
+                      _customerOwnerController.text,
+                      _customerContactController.text,
+                      _customerContactPhoneController.text,
                       _locationController.text,
-                      _companyDescriptionController.text,
+                      _customerDescriptionController.text,
                     );
                   });
                 }
@@ -215,7 +215,7 @@ class _CompanyCreateState extends State<CompanyCreate> {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasData) {
-            return Text('User Created: ${snapshot.data!.companyName}');
+            return Text('User Created: ${snapshot.data!.customerName}');
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           }
